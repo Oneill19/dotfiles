@@ -7,23 +7,23 @@ symbol = "🌱 "
 [package]
 display_private = true
 
-[custom.giturl-pwsh]
-disabled = false
-description = "Display symbol for remote Git server (pwsh)"
-command = """
-$gitRemote = git ls-remote --get-url
-$symbol = ' ' # If no Git Remote is returned.
-switch -regex ($gitRemote) {\
-    'github'    { $symbol = ' ' }\
-    'gitlab'    { $symbol = ' ' }\
-    'bitbucket' { $symbol = ' ' }\
-     Default    { $symbol = ' ' }\
-}
-echo $symbol
-"""
-when = "git rev-parse --is-inside-work-tree"
-shell = ["pwsh", "-NoProfile", "-Command", "-"]
-format = "at $output"
+# [custom.giturl-pwsh]
+# disabled = false
+# description = "Display symbol for remote Git server (pwsh)"
+# command = """
+# $gitRemote = git ls-remote --get-url
+# $symbol = ' ' # If no Git Remote is returned.
+# switch -regex ($gitRemote) {\
+#     'github'    { $symbol = '  ' }\
+#     'gitlab'    { $symbol = '  ' }\
+#     'bitbucket' { $symbol = '  ' }\
+#      Default    { $symbol = '  ' }\
+# }
+# echo $symbol
+# """
+# when = "git rev-parse --is-inside-work-tree"
+# shell = ["pwsh", "-NoProfile", "-Command", "-"]
+# format = "at $output"
 
 [os.symbols]
 Windows = "󰍲"
